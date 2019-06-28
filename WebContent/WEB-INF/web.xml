@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://java.sun.com/xml/ns/javaee" 
+ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>FileUpload</display-name>
+  <context-param> 
+  	<param-name>contextConfiglocation</param-name>
+  	<param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  
+   <context-param>
+	  <param-name>conf</param-name>
+	  <param-value>/data/apk_ipa/cust_conf</param-value>
+   </context-param>
+   
+   <context-param>
+	  <param-name>content</param-name>
+	  <param-value>/data/apk_ipa/apprelease</param-value>
+   </context-param>
+   
+    <context-param>
+	  <param-name>upload</param-name>
+	  <param-value>/data/apk_ipa/upload</param-value>
+   </context-param>
+   
+    <context-param>
+	  <param-name>upload_www</param-name>
+	  <param-value>/data/apk_ipa/upload/00.upload_www</param-value>
+   </context-param>
+   <context-param>
+	  <param-name>uploadjson</param-name>  
+	  <param-value>/data/apk_ipa/upload/00.uploadjson</param-value>
+   </context-param>
+   
+  <servlet>
+     <servlet-name>IndexAction</servlet-name>
+     <servlet-class>com.nstc.index.IndexAction</servlet-class>
+   </servlet>
+   
+   <servlet>
+     <servlet-name>UploadAction</servlet-name>
+     <servlet-class>com.nstc.upload.UploadAction</servlet-class>
+   </servlet>
+   
+   <servlet>
+     <servlet-name>JsonIndexAction</servlet-name>
+     <servlet-class>com.nstc.index.JsonIndexAction</servlet-class>
+   </servlet>
+   
+    <servlet>
+     <servlet-name>JsonUploadAction</servlet-name>
+     <servlet-class>com.nstc.upload.JsonUploadAction</servlet-class>
+   </servlet>
+   
+    <servlet>
+     <servlet-name>UploadZengLiangAction</servlet-name>
+     <servlet-class>com.nstc.upload.UploadZengLiangAction</servlet-class>
+   </servlet>
+   
+    <servlet>
+     <servlet-name>ZengLiangIndexAction</servlet-name>
+     <servlet-class>com.nstc.index.ZengLiangIndexAction</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+     <servlet-name>IndexAction</servlet-name>
+     <url-pattern>/index.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+     <servlet-name>UploadAction</servlet-name>
+     <url-pattern>/upload/UploadAction</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+     <servlet-name>JsonIndexAction</servlet-name>
+     <url-pattern>/jsonIndex.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+     <servlet-name>JsonUploadAction</servlet-name>
+     <url-pattern>/upload/JsonUploadAction</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+     <servlet-name>UploadZengLiangAction</servlet-name>
+     <url-pattern>/upload/UploadZengLiangAction</url-pattern>
+   </servlet-mapping> 
+
+   <servlet-mapping>
+     <servlet-name>ZengLiangIndexAction</servlet-name>
+     <url-pattern>/zengliangIndex.do</url-pattern>
+   </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.action</welcome-file>
+        <welcome-file>index.do</welcome-file>
+    </welcome-file-list>
+  
+</web-app>
